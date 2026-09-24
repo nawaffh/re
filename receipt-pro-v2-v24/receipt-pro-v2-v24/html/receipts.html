@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   السندات | Receipt Pro
+  </title>
+  <link href="../css/global.css" rel="stylesheet"/>
+  <link href="../css/pages/receipts.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main class="main">
+   <section class="filter-panel">
+    <div class="filter-top">
+     <div class="filter-title">
+      <i class="fa-solid fa-sliders">
+      </i>
+      <span>
+       بحث وفلترة السندات
+      </span>
+     </div>
+     <div class="action-bar">
+      <span class="filter-count" id="receiptsCount">
+       0 سند
+      </span>
+      <button class="btn btn-excel" id="exportExcel">
+       <i class="fa-solid fa-file-excel">
+       </i>
+       تصدير Excel
+      </button>
+     </div>
+    </div>
+    <div class="filter-grid">
+     <div class="filter-search">
+      <i class="fa-solid fa-magnifying-glass">
+      </i>
+      <input class="filter-control" id="searchInput" placeholder="ابحث برقم السند، العميل، البيان أو الملاحظة..."/>
+     </div>
+     <select class="filter-control" id="accountFilter">
+      <option value="all">
+       كل الحسابات
+      </option>
+     </select>
+     <input class="filter-control" id="fromDate" title="من تاريخ" type="date"/>
+     <input class="filter-control" id="toDate" title="إلى تاريخ" type="date"/>
+     <input class="filter-control" id="minAmount" min="0" placeholder="أقل مبلغ" step="0.01" type="number"/>
+    </div>
+    <div class="filter-chips" id="typeChips">
+     <button class="filter-chip active" data-type="all">
+      <i class="fa-solid fa-layer-group">
+      </i>
+      الكل
+     </button>
+     <button class="filter-chip receive" data-type="receive">
+      <i class="fa-solid fa-arrow-down">
+      </i>
+      قبض
+     </button>
+     <button class="filter-chip pay" data-type="pay">
+      <i class="fa-solid fa-arrow-up">
+      </i>
+      صرف
+     </button>
+     <button class="filter-chip" id="clearFilters">
+      <i class="fa-solid fa-rotate-left">
+      </i>
+      مسح الفلاتر
+     </button>
+    </div>
+   </section>
+   <section class="card table-card">
+    <div class="table-wrap">
+     <table>
+      <thead>
+       <tr>
+        <th>
+         رقم السند
+        </th>
+        <th>
+         التاريخ
+        </th>
+        <th>
+         النوع
+        </th>
+        <th>
+         الحساب
+        </th>
+        <th>
+         العميل
+        </th>
+        <th>
+         المبلغ
+        </th>
+        <th>
+         إجراء
+        </th>
+       </tr>
+      </thead>
+      <tbody id="receiptsBody">
+      </tbody>
+     </table>
+    </div>
+   </section>
+  </main>
+  <script src="../js/core/storage.js">
+  </script>
+  <script src="../js/core/app.js">
+  </script>
+  <script src="../js/pages/receipt.js">
+  </script>
+ </body>
+</html>

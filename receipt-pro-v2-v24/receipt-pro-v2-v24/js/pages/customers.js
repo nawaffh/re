@@ -1,0 +1,17 @@
+/**
+ * Receipt Pro - Customers Page
+ * منطق هذه الصفحة فقط. الوظائف المشتركة موجودة في js/core/app.js
+ * والبيانات موجودة في js/core/storage.js
+ */
+
+ReceiptPro.initLayout({active:'customers',title:'العملاء',subtitle:'إدارة العملاء مع بحث وفلترة أسرع'});
+let query='',dataFilter='all';
+const qEl=document.getElementById('customerSearch'),fEl=document.getElementById('customerDataFilter');
+document.getElementById('newCustomer').onclick=()=>customerModal();
+qEl.oninput=e=>{query=e.target.value.toLowerCase();renderCustomers()};
+fEl.onchange=e=>{dataFilter=e.target.value;renderCustomers()};
+document.getElementById('clearCustomerSearch').onclick=()=>{qEl.value='';fEl.value='all';query='';dataFilter='all';renderCustomers()};
+renderCustomers();
+function customerModal(c){ReceiptPro.modal(`<div class="modal"><div class="modal-head"><h3>${c?'تعديل العميل':'إضافة عميل'}</h3><button class="icon-btn" onclick="ReceiptPro.closeModal()"><i class="fa-solid fa-xmark"></i></button></div><form id="customerForm"><div class="modal-body"><div class="form-grid"><div class="field"><label>اسم العميل</label><input id="cusName" required value="${ReceiptPro.esc(c?.name||'')}"></div><div class="field"><label>رقم الجوال</label><input id="cusPhone" value="${ReceiptPro.esc(c?.phone||'')}"></div><div class="field full"><label>البريد الإلكتروني</label><input id="cusEmail" type="email" value="${ReceiptPro.esc(c?.email||'')}"></div><div class="field full"><label>ملاحظة</label><textarea id="cusNote">${ReceiptPro.esc(c?.note||'')}</textarea></div></div></div><div class="modal-foot"><button type="button" class="btn btn-secondary" onclick="ReceiptPro.closeModal()">إلغاء</button><button class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> حفظ</button></div></form></div>`);document.getElementById('customerForm').onsubmit=e=>{e.preventDefault();const d={name:document.getElementById('cusName').value,phone:document.getElementById('cusPhone').value,email:document.getElementById('cusEmail').value,note:document.getElementById('cusNote').value};c?RPStore.updateCustomer(c.id,d):RPStore.addCustomer(d);ReceiptPro.closeModal();ReceiptPro.toast('تم حفظ بيانات العميل');renderCustomers()}}
+function renderCustomers(){let rows=RPStore.getCustomers();if(query)rows=rows.filter(c=>(c.name+' '+c.phone+' '+c.email+' '+c.note).toLowerCase().includes(query));if(dataFilter==='phone')rows=rows.filter(c=>c.phone);if(dataFilter==='email')rows=rows.filter(c=>c.email);if(dataFilter==='note')rows=rows.filter(c=>c.note);document.getElementById('customersCountLabel').textContent=`${rows.length} عميل`;document.getElementById('customerBody').innerHTML=rows.length?rows.map(c=>`<tr><td><b>${ReceiptPro.esc(c.name)}</b></td><td>${ReceiptPro.esc(c.phone||'-')}</td><td>${ReceiptPro.esc(c.email||'-')}</td><td>${ReceiptPro.esc(c.note||'-')}</td><td><div class="row-actions"><button title="تعديل" onclick="editCustomer('${c.id}')"><i class="fa-solid fa-pen"></i></button><button class="delete" title="حذف" onclick="removeCustomer('${c.id}')"><i class="fa-solid fa-trash-can"></i></button></div></td></tr>`).join(''):'<tr><td colspan="5"><div class="empty"><div class="empty-icon"><i class="fa-solid fa-users"></i></div><h3>لا توجد نتائج</h3><p>غيّر البحث أو أضف عميلًا جديدًا.</p></div></td></tr>'}
+window.editCustomer=id=>customerModal(RPStore.getCustomers().find(x=>x.id===id));window.removeCustomer=id=>{if(confirm('حذف العميل؟')){RPStore.deleteCustomer(id);ReceiptPro.toast('تم حذف العميل');renderCustomers()}}

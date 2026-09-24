@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   العملاء | Receipt Pro
+  </title>
+  <link href="../css/global.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main class="main">
+   <div class="section-head">
+    <div>
+     <h2>
+      العملاء
+     </h2>
+     <p>
+      حفظ بيانات العملاء لتسريع إنشاء السندات.
+     </p>
+    </div>
+    <button class="btn btn-primary" id="newCustomer">
+     <i class="fa-solid fa-user-plus">
+     </i>
+     إضافة عميل
+    </button>
+   </div>
+   <section class="filter-panel">
+    <div class="filter-top">
+     <div class="filter-title">
+      <i class="fa-solid fa-magnifying-glass">
+      </i>
+      البحث في العملاء
+     </div>
+     <span class="filter-count" id="customersCountLabel">
+      0 عميل
+     </span>
+    </div>
+    <div class="filter-grid filter-grid-3">
+     <div class="filter-search">
+      <i class="fa-solid fa-user">
+      </i>
+      <input class="filter-control" id="customerSearch" placeholder="ابحث بالاسم، الجوال، البريد أو الملاحظة..."/>
+     </div>
+     <select class="filter-control" id="customerDataFilter">
+      <option value="all">
+       كل العملاء
+      </option>
+      <option value="phone">
+       لديه رقم جوال
+      </option>
+      <option value="email">
+       لديه بريد إلكتروني
+      </option>
+      <option value="note">
+       لديه ملاحظة
+      </option>
+     </select>
+     <button class="btn btn-secondary" id="clearCustomerSearch">
+      <i class="fa-solid fa-rotate-left">
+      </i>
+      مسح البحث
+     </button>
+    </div>
+   </section>
+   <section class="card table-card">
+    <div class="table-wrap">
+     <table>
+      <thead>
+       <tr>
+        <th>
+         الاسم
+        </th>
+        <th>
+         الجوال
+        </th>
+        <th>
+         البريد
+        </th>
+        <th>
+         الملاحظة
+        </th>
+        <th>
+         إجراء
+        </th>
+       </tr>
+      </thead>
+      <tbody id="customerBody">
+      </tbody>
+     </table>
+    </div>
+   </section>
+  </main>
+  <script src="../js/core/storage.js">
+  </script>
+  <script src="../js/core/app.js">
+  </script>
+  <script src="../js/pages/customers.js">
+  </script>
+ </body>
+</html>

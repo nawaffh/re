@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   التقارير | Receipt Pro
+  </title>
+  <link href="../css/global.css" rel="stylesheet"/>
+  <link href="../css/pages/reports.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main class="main">
+   <section class="filter-panel">
+    <div class="filter-top">
+     <div class="filter-title">
+      <i class="fa-solid fa-chart-line">
+      </i>
+      خيارات التقرير
+     </div>
+     <div class="action-bar">
+      <button class="btn btn-excel" id="exportReportExcel">
+       <i class="fa-solid fa-file-excel">
+       </i>
+       تصدير Excel
+      </button>
+     </div>
+    </div>
+    <div class="filter-grid">
+     <div class="filter-search">
+      <i class="fa-solid fa-magnifying-glass">
+      </i>
+      <input class="filter-control" id="reportSearch" placeholder="ابحث برقم السند أو العميل..."/>
+     </div>
+     <select class="filter-control" id="reportAccount">
+      <option value="all">
+       كل الحسابات
+      </option>
+     </select>
+     <input class="filter-control" id="fromDate" type="date"/>
+     <input class="filter-control" id="toDate" type="date"/>
+    </div>
+    <div class="filter-chips">
+     <button class="filter-chip active" data-report-type="all">
+      <i class="fa-solid fa-layer-group">
+      </i>
+      الكل
+     </button>
+     <button class="filter-chip receive" data-report-type="receive">
+      <i class="fa-solid fa-arrow-down">
+      </i>
+      قبض
+     </button>
+     <button class="filter-chip pay" data-report-type="pay">
+      <i class="fa-solid fa-arrow-up">
+      </i>
+      صرف
+     </button>
+     <button class="filter-chip" id="clearReport">
+      <i class="fa-solid fa-rotate-left">
+      </i>
+      إعادة
+     </button>
+    </div>
+   </section>
+   <section class="report-cards">
+    <div class="card report-card">
+     <span>
+      إجمالي القبض
+     </span>
+     <strong id="rReceive">
+      0 ر.س
+     </strong>
+    </div>
+    <div class="card report-card">
+     <span>
+      إجمالي الصرف
+     </span>
+     <strong id="rPay">
+      0 ر.س
+     </strong>
+    </div>
+    <div class="card report-card">
+     <span>
+      صافي الحركة
+     </span>
+     <strong id="rNet">
+      0 ر.س
+     </strong>
+    </div>
+    <div class="card report-card">
+     <span>
+      عدد السندات
+     </span>
+     <strong id="rCount">
+      0
+     </strong>
+    </div>
+   </section>
+   <section class="charts-grid">
+    <div class="card chart-card">
+     <div class="chart-head">
+      <h3>
+       الحركة حسب التاريخ
+      </h3>
+      <p>
+       القبض والصرف خلال الفترة المحددة
+      </p>
+     </div>
+     <div class="chart-wrap">
+      <canvas id="movementChart">
+      </canvas>
+     </div>
+    </div>
+    <div class="card chart-card">
+     <div class="chart-head">
+      <h3>
+       توزيع الرصيد
+      </h3>
+      <p>
+       الرصيد الحالي لكل حساب
+      </p>
+     </div>
+     <div class="chart-wrap">
+      <canvas id="accountsChart">
+      </canvas>
+     </div>
+    </div>
+   </section>
+   <section class="card table-card">
+    <div class="table-wrap">
+     <table>
+      <thead>
+       <tr>
+        <th>
+         التاريخ
+        </th>
+        <th>
+         السند
+        </th>
+        <th>
+         النوع
+        </th>
+        <th>
+         الحساب
+        </th>
+        <th>
+         العميل
+        </th>
+        <th>
+         المبلغ
+        </th>
+       </tr>
+      </thead>
+      <tbody id="reportBody">
+      </tbody>
+     </table>
+    </div>
+   </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js">
+  </script>
+  <script src="../js/core/storage.js">
+  </script>
+  <script src="../js/core/app.js">
+  </script>
+  <script src="../js/pages/reports.js">
+  </script>
+ </body>
+</html>

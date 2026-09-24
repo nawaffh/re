@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   تفاصيل الحساب | Receipt Pro
+  </title>
+  <link href="../css/global.css" rel="stylesheet"/>
+  <link href="../css/pages/accounts.css" rel="stylesheet"/>
+  <link href="../css/pages/receipts.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main class="main">
+   <section class="card detail-head" id="detailHead">
+   </section>
+   <section class="filter-panel">
+    <div class="filter-top">
+     <div class="filter-title">
+      <i class="fa-solid fa-filter">
+      </i>
+      فلترة حركات الحساب
+     </div>
+     <span class="filter-count" id="movementCount">
+      0 حركة
+     </span>
+    </div>
+    <div class="filter-grid">
+     <div class="filter-search">
+      <i class="fa-solid fa-magnifying-glass">
+      </i>
+      <input class="filter-control" id="movementSearch" placeholder="ابحث في البيان أو رقم السند..."/>
+     </div>
+     <input class="filter-control" id="movementFrom" type="date"/>
+     <input class="filter-control" id="movementTo" type="date"/>
+    </div>
+    <div class="filter-chips" id="movementFilters">
+     <button class="filter-chip active" data-filter="all">
+      <i class="fa-solid fa-layer-group">
+      </i>
+      كل الحركات
+     </button>
+     <button class="filter-chip receive" data-filter="receive">
+      <i class="fa-solid fa-arrow-down">
+      </i>
+      قبض
+     </button>
+     <button class="filter-chip pay" data-filter="pay">
+      <i class="fa-solid fa-arrow-up">
+      </i>
+      صرف
+     </button>
+     <button class="filter-chip transfer" data-filter="transfer">
+      <i class="fa-solid fa-right-left">
+      </i>
+      تحويلات
+     </button>
+     <button class="filter-chip" id="clearMovementFilters">
+      <i class="fa-solid fa-rotate-left">
+      </i>
+      مسح
+     </button>
+    </div>
+   </section>
+   <section class="card table-card">
+    <div class="table-wrap">
+     <table>
+      <thead>
+       <tr>
+        <th>
+         التاريخ
+        </th>
+        <th>
+         النوع
+        </th>
+        <th>
+         البيان
+        </th>
+        <th>
+         المبلغ
+        </th>
+        <th>
+         الرصيد
+        </th>
+       </tr>
+      </thead>
+      <tbody id="movementBody">
+      </tbody>
+     </table>
+    </div>
+   </section>
+  </main>
+  <script src="../js/core/storage.js">
+  </script>
+  <script src="../js/core/app.js">
+  </script>
+  <script src="../js/pages/accounts.js">
+  </script>
+ </body>
+</html>

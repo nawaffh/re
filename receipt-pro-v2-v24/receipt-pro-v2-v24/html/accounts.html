@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   الحسابات | Receipt Pro
+  </title>
+  <link href="../css/global.css" rel="stylesheet"/>
+  <link href="../css/pages/accounts.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main class="main">
+   <section class="accounts-summary">
+    <div class="card summary-box">
+     <span>
+      إجمالي الرصيد
+     </span>
+     <strong id="sumBalance">
+      0 ر.س
+     </strong>
+    </div>
+    <div class="card summary-box">
+     <span>
+      عدد الحسابات
+     </span>
+     <strong id="sumAccounts">
+      0
+     </strong>
+    </div>
+    <div class="card summary-box">
+     <span>
+      إجمالي الحركات
+     </span>
+     <strong id="sumMoves">
+      0
+     </strong>
+    </div>
+   </section>
+   <div class="section-head">
+    <div>
+     <h2>
+      حساباتك المالية
+     </h2>
+     <p>
+      كل حساب مستقل برصيده وحركاته وملاحظاته.
+     </p>
+    </div>
+    <button class="btn btn-primary" id="addAccount">
+     <i class="fa-solid fa-plus">
+     </i>
+     إضافة حساب
+    </button>
+   </div>
+   <section class="filter-panel">
+    <div class="filter-top">
+     <div class="filter-title">
+      <i class="fa-solid fa-magnifying-glass">
+      </i>
+      البحث في الحسابات
+     </div>
+     <span class="filter-count" id="accountsCountLabel">
+      0 حساب
+     </span>
+    </div>
+    <div class="filter-grid filter-grid-3">
+     <div class="filter-search">
+      <i class="fa-solid fa-building-columns">
+      </i>
+      <input class="filter-control" id="accountSearch" placeholder="ابحث باسم الحساب، البنك أو الملاحظة..."/>
+     </div>
+     <select class="filter-control" id="accountTypeFilter">
+      <option value="all">
+       كل أنواع الحسابات
+      </option>
+      <option value="bank">
+       بنكي
+      </option>
+      <option value="cash">
+       نقدي / صندوق
+      </option>
+      <option value="wallet">
+       محفظة
+      </option>
+      <option value="other">
+       أخرى
+      </option>
+     </select>
+     <button class="btn btn-secondary" id="clearAccountSearch">
+      <i class="fa-solid fa-rotate-left">
+      </i>
+      مسح البحث
+     </button>
+    </div>
+   </section>
+   <section class="accounts-grid" id="accountsGrid">
+   </section>
+  </main>
+  <script src="../js/core/storage.js">
+  </script>
+  <script src="../js/core/app.js">
+  </script>
+  <script src="../js/pages/accounts.js">
+  </script>
+ </body>
+</html>

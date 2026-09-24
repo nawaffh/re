@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   التحويلات | Receipt Pro
+  </title>
+  <link href="../css/global.css" rel="stylesheet"/>
+  <link href="../css/pages/receipts.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main class="main">
+   <div class="section-head">
+    <div>
+     <h2>
+      التحويل بين الحسابات
+     </h2>
+     <p>
+      التحويل الداخلي لا يغيّر إجمالي الرصيد، بل ينقل المبلغ بين حسابين.
+     </p>
+    </div>
+    <button class="btn btn-primary" id="newTransfer">
+     <i class="fa-solid fa-right-left">
+     </i>
+     تحويل جديد
+    </button>
+   </div>
+   <section class="filter-panel">
+    <div class="filter-top">
+     <div class="filter-title">
+      <i class="fa-solid fa-filter">
+      </i>
+      بحث التحويلات
+     </div>
+     <span class="filter-count" id="transfersCountLabel">
+      0 تحويل
+     </span>
+    </div>
+    <div class="filter-grid">
+     <div class="filter-search">
+      <i class="fa-solid fa-magnifying-glass">
+      </i>
+      <input class="filter-control" id="transferSearch" placeholder="ابحث باسم الحساب أو الملاحظة..."/>
+     </div>
+     <select class="filter-control" id="fromFilter">
+      <option value="all">
+       من كل الحسابات
+      </option>
+     </select>
+     <select class="filter-control" id="toFilter">
+      <option value="all">
+       إلى كل الحسابات
+      </option>
+     </select>
+     <input class="filter-control" id="transferFromDate" title="من تاريخ" type="date"/>
+     <input class="filter-control" id="transferToDate" title="إلى تاريخ" type="date"/>
+    </div>
+    <div class="filter-chips">
+     <button class="filter-chip" id="clearTransferFilters">
+      <i class="fa-solid fa-rotate-left">
+      </i>
+      مسح الفلاتر
+     </button>
+    </div>
+   </section>
+   <section class="card table-card">
+    <div class="table-wrap">
+     <table>
+      <thead>
+       <tr>
+        <th>
+         التاريخ
+        </th>
+        <th>
+         من
+        </th>
+        <th>
+         إلى
+        </th>
+        <th>
+         المبلغ
+        </th>
+        <th>
+         الملاحظة
+        </th>
+        <th>
+         إجراء
+        </th>
+       </tr>
+      </thead>
+      <tbody id="transferBody">
+      </tbody>
+     </table>
+    </div>
+   </section>
+  </main>
+  <script src="../js/core/storage.js">
+  </script>
+  <script src="../js/core/app.js">
+  </script>
+  <script src="../js/pages/transfers.js">
+  </script>
+ </body>
+</html>

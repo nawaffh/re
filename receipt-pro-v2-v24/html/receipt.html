@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   سند جديد | Receipt Pro
+  </title>
+  <link href="../css/global.css" rel="stylesheet"/>
+  <link href="../css/pages/receipts.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main class="main">
+   <section class="receipt-layout">
+    <div class="card form-card">
+     <form id="receiptForm">
+      <div class="field full">
+       <label>
+        نوع السند
+       </label>
+       <div class="receipt-type-switch">
+        <button class="type-option receive active" data-type="receive" type="button">
+         سند قبض
+        </button>
+        <button class="type-option pay" data-type="pay" type="button">
+         سند صرف
+        </button>
+       </div>
+      </div>
+      <div class="form-grid" style="margin-top:14px">
+       <div class="field">
+        <label>
+         الحساب المالي
+        </label>
+        <select id="accountId" required="">
+        </select>
+       </div>
+       <div class="field">
+        <label>
+         التاريخ
+        </label>
+        <input id="date" required="" type="date"/>
+       </div>
+       <div class="field">
+        <label>
+         العميل
+        </label>
+        <select id="customerId">
+         <option value="">
+          بدون عميل
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label>
+         اسم العميل يدويًا
+        </label>
+        <input id="customerName" placeholder="اختياري"/>
+       </div>
+       <div class="field">
+        <label>
+         المبلغ
+        </label>
+        <input id="amount" min="0" placeholder="0.00" required="" step="0.01" type="number"/>
+       </div>
+       <div class="field">
+        <label>
+         رقم السند
+        </label>
+        <input id="number" readonly=""/>
+       </div>
+       <div class="field full">
+        <label>
+         البيان / التفاصيل
+        </label>
+        <textarea id="details" placeholder="اكتب وصف العملية"></textarea>
+       </div>
+       <div class="field full">
+        <label>
+         ملاحظة
+        </label>
+        <textarea id="note" placeholder="ملاحظة إضافية اختيارية"></textarea>
+       </div>
+      </div>
+      <div class="receipt-actions">
+       <button class="btn btn-primary">
+        <i class="fa-solid fa-floppy-disk">
+        </i>
+        حفظ السند
+       </button>
+       <button class="btn btn-secondary" id="resetBtn" type="button">
+        تفريغ الحقول
+       </button>
+      </div>
+     </form>
+    </div>
+    <div class="card receipt-preview">
+     <div class="preview-paper" id="preview">
+     </div>
+    </div>
+   </section>
+  </main>
+  <script src="../js/core/storage.js">
+  </script>
+  <script src="../js/core/app.js">
+  </script>
+  <script src="../js/pages/receipt.js">
+  </script>
+ </body>
+</html>

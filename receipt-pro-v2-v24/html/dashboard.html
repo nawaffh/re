@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   لوحة التحكم | Receipt Pro
+  </title>
+  <link href="../css/global.css" rel="stylesheet"/>
+  <link href="../css/pages/dashboard.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main class="main">
+   <section class="hero-balance">
+    <div class="balance-card">
+     <div class="balance-label">
+      <span>
+       <i class="fa-solid fa-wallet">
+       </i>
+      </span>
+      إجمالي الرصيد في جميع الحسابات
+     </div>
+     <h2 id="totalBalance">
+      0 ر.س
+     </h2>
+     <p>
+      يتم احتسابه من أرصدة الحسابات والسندات والتحويلات الداخلية.
+     </p>
+    </div>
+    <div class="quick-grid">
+     <a class="quick" href="receipt.html?type=receive">
+      <span class="qicon green">
+       <i class="fa-solid fa-arrow-down">
+       </i>
+      </span>
+      <div>
+       <b>
+        سند قبض
+       </b>
+       <small>
+        إضافة مبلغ وارد
+       </small>
+      </div>
+     </a>
+     <a class="quick" href="receipt.html?type=pay">
+      <span class="qicon red">
+       <i class="fa-solid fa-arrow-up">
+       </i>
+      </span>
+      <div>
+       <b>
+        سند صرف
+       </b>
+       <small>
+        تسجيل مبلغ خارج
+       </small>
+      </div>
+     </a>
+     <a class="quick" href="accounts.html">
+      <span class="qicon blue">
+       <i class="fa-solid fa-building-columns">
+       </i>
+      </span>
+      <div>
+       <b>
+        الحسابات
+       </b>
+       <small>
+        إدارة أرصدتك
+       </small>
+      </div>
+     </a>
+     <a class="quick" href="transfers.html">
+      <span class="qicon purple">
+       <i class="fa-solid fa-right-left">
+       </i>
+      </span>
+      <div>
+       <b>
+        تحويل
+       </b>
+       <small>
+        بين الحسابات
+       </small>
+      </div>
+     </a>
+    </div>
+   </section>
+   <section class="stats">
+    <div class="card stat">
+     <div class="stat-top">
+      <span>
+       الحسابات
+      </span>
+      <i class="sicon qicon blue fa-solid fa-building-columns">
+      </i>
+     </div>
+     <strong id="accountsCount">
+      0
+     </strong>
+     <small>
+      حساب مالي
+     </small>
+    </div>
+    <div class="card stat">
+     <div class="stat-top">
+      <span>
+       إجمالي القبض
+      </span>
+      <i class="sicon qicon green fa-solid fa-arrow-trend-up">
+      </i>
+     </div>
+     <strong id="receiveTotal">
+      0 ر.س
+     </strong>
+     <small>
+      الأموال الواردة
+     </small>
+    </div>
+    <div class="card stat">
+     <div class="stat-top">
+      <span>
+       إجمالي الصرف
+      </span>
+      <i class="sicon qicon red fa-solid fa-arrow-trend-down">
+      </i>
+     </div>
+     <strong id="payTotal">
+      0 ر.س
+     </strong>
+     <small>
+      الأموال الخارجة
+     </small>
+    </div>
+    <div class="card stat">
+     <div class="stat-top">
+      <span>
+       العملاء
+      </span>
+      <i class="sicon qicon purple fa-solid fa-users">
+      </i>
+     </div>
+     <strong id="customersCount">
+      0
+     </strong>
+     <small>
+      عميل مسجل
+     </small>
+    </div>
+   </section>
+   <section class="dashboard-grid">
+    <div class="card panel">
+     <div class="panel-title">
+      <h3>
+       الحسابات المالية
+      </h3>
+      <a href="accounts.html">
+       عرض الكل
+      </a>
+     </div>
+     <div class="account-list" id="accountList">
+     </div>
+    </div>
+    <div class="card panel">
+     <div class="panel-title">
+      <h3>
+       آخر الحركات
+      </h3>
+      <a href="receipts.html">
+       السجل الكامل
+      </a>
+     </div>
+     <div class="activity-list" id="activityList">
+     </div>
+    </div>
+   </section>
+  </main>
+  <script src="../js/core/storage.js">
+  </script>
+  <script src="../js/core/app.js">
+  </script>
+  <script src="../js/pages/dashboard.js">
+  </script>
+ </body>
+</html>

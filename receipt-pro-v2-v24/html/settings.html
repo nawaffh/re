@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   الإعدادات | Receipt Pro
+  </title>
+  <link href="../css/global.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <main class="main">
+   <section class="settings-layout">
+    <div class="card form-card">
+     <div class="section-head">
+      <div>
+       <h2>
+        <i class="fa-solid fa-building">
+        </i>
+        هوية المنشأة والطباعة
+       </h2>
+       <p>
+        هذه البيانات تظهر تلقائيًا في السندات المطبوعة.
+       </p>
+      </div>
+     </div>
+     <form id="settingsForm">
+      <div class="brand-settings-head">
+       <div class="logo-uploader">
+        <div class="logo-preview" id="logoPreview">
+         <i class="fa-solid fa-image">
+         </i>
+        </div>
+        <div>
+         <label class="btn btn-light" for="logoFile">
+          <i class="fa-solid fa-camera">
+          </i>
+          اختيار شعار الشركة
+         </label>
+         <input accept="image/png,image/jpeg,image/webp" class="hidden" id="logoFile" type="file"/>
+         <button class="btn btn-secondary" id="removeLogo" type="button">
+          <i class="fa-solid fa-trash">
+          </i>
+          إزالة الشعار
+         </button>
+         <small class="settings-hint">
+          يفضل شعار مربع أو أفقي بخلفية شفافة.
+         </small>
+        </div>
+       </div>
+      </div>
+      <div class="form-grid settings-grid">
+       <div class="field">
+        <label>
+         اسم الشركة / المنشأة
+        </label>
+        <input id="companyName" placeholder="مثال: مؤسسة النور التجارية"/>
+       </div>
+       <div class="field">
+        <label>
+         العملة
+        </label>
+        <select id="currency">
+         <option value="SAR">
+          ريال سعودي (ر.س)
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label>
+         الرقم الضريبي
+        </label>
+        <input id="taxNumber" inputmode="numeric" placeholder="اختياري"/>
+       </div>
+       <div class="field">
+        <label>
+         رقم الهاتف
+        </label>
+        <input id="phone" inputmode="tel" placeholder="05xxxxxxxx"/>
+       </div>
+       <div class="field">
+        <label>
+         البريد الإلكتروني
+        </label>
+        <input id="email" placeholder="info@example.com" type="email"/>
+       </div>
+       <div class="field">
+        <label>
+         الموقع الإلكتروني
+        </label>
+        <input id="website" placeholder="www.example.com"/>
+       </div>
+       <div class="field full">
+        <label>
+         عنوان المنشأة
+        </label>
+        <input id="address" placeholder="المدينة، الحي، الشارع"/>
+       </div>
+       <div class="field full">
+        <label>
+         النص أسفل السند
+        </label>
+        <textarea id="receiptFooter" placeholder="مثال: شكراً لتعاملكم معنا"></textarea>
+       </div>
+      </div>
+      <div class="print-options">
+       <label class="check-option">
+        <input id="showTaxNumber" type="checkbox"/>
+        <span>
+         <b>
+          إظهار الرقم الضريبي
+         </b>
+         <small>
+          يظهر أعلى السند إذا تمت إضافته.
+         </small>
+        </span>
+       </label>
+       <label class="check-option">
+        <input id="showSignature" type="checkbox"/>
+        <span>
+         <b>
+          إظهار خانات التوقيع
+         </b>
+         <small>
+          توقيع المستلم والمحاسب في نهاية السند.
+         </small>
+        </span>
+       </label>
+      </div>
+      <div class="form-actions">
+       <button class="btn btn-primary">
+        <i class="fa-solid fa-floppy-disk">
+        </i>
+        حفظ إعدادات الهوية
+       </button>
+      </div>
+     </form>
+    </div>
+    <div class="card print-preview-card">
+     <div class="section-head">
+      <div>
+       <h2>
+        <i class="fa-solid fa-print">
+        </i>
+        معاينة شكل الطباعة
+       </h2>
+       <p>
+        تتحدث المعاينة مباشرة أثناء تعديل البيانات.
+       </p>
+      </div>
+     </div>
+     <div class="settings-print-preview" id="settingsPrintPreview">
+     </div>
+    </div>
+    <div class="card form-card">
+     <div class="section-head">
+      <div>
+       <h2>
+        <i class="fa-solid fa-shield-halved">
+        </i>
+        النسخة الاحتياطية
+       </h2>
+       <p>
+        صدّر جميع الحسابات والسندات والعملاء والتحويلات أو استعدها لاحقًا.
+       </p>
+      </div>
+     </div>
+     <div class="stack wrap-mobile">
+      <button class="btn btn-light" id="exportData">
+       <i class="fa-solid fa-download">
+       </i>
+       تصدير البيانات
+      </button>
+      <label class="btn btn-secondary" for="importFile">
+       <i class="fa-solid fa-upload">
+       </i>
+       استيراد نسخة
+      </label>
+      <input accept="application/json" class="hidden" id="importFile" type="file"/>
+     </div>
+    </div>
+    <div class="card form-card danger-zone">
+     <div class="section-head">
+      <div>
+       <h2>
+        <i class="fa-solid fa-triangle-exclamation">
+        </i>
+        إدارة البيانات
+       </h2>
+       <p>
+        هذا الإجراء يحذف بيانات النظام من الجهاز الحالي.
+       </p>
+      </div>
+     </div>
+     <button class="btn btn-danger" id="resetAll">
+      <i class="fa-solid fa-trash">
+      </i>
+      حذف جميع البيانات
+     </button>
+    </div>
+   </section>
+  </main>
+  <script src="../js/core/storage.js">
+  </script>
+  <script src="../js/core/app.js">
+  </script>
+  <script src="../js/pages/settings.js">
+  </script>
+ </body>
+</html>

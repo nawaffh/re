@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   تسجيل الدخول | Receipt Pro
+  </title>
+  <link href="../css/global.css" rel="stylesheet"/>
+  <link href="../css/pages/auth.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="auth-page">
+   <section class="auth-hero">
+    <div class="hero-brand">
+     <span class="brand-mark">
+      <i class="fa-solid fa-receipt">
+      </i>
+     </span>
+     <div>
+      <b>
+       Receipt Pro
+      </b>
+      <small>
+       إدارة مالية ذكية
+      </small>
+     </div>
+    </div>
+    <div class="hero-copy">
+     <h1>
+      كل حساباتك المالية في مكان واحد.
+     </h1>
+     <p>
+      أنشئ أكثر من حساب مالي داخل نفس المستخدم، اربط السندات بالحساب الصحيح، وحوّل الأموال بين الحسابات مع سجل واضح للحركة.
+     </p>
+     <div class="hero-points">
+      <div class="hero-point">
+       <i class="fa-solid fa-building-columns">
+       </i>
+       حسابات متعددة
+      </div>
+      <div class="hero-point">
+       <i class="fa-solid fa-right-left">
+       </i>
+       تحويلات داخلية
+      </div>
+      <div class="hero-point">
+       <i class="fa-solid fa-chart-line">
+       </i>
+       تقارير واضحة
+      </div>
+      <div class="hero-point">
+       <i class="fa-solid fa-mobile-screen">
+       </i>
+       متوافق مع الجوال
+      </div>
+     </div>
+    </div>
+    <div style="position:relative;z-index:1;font-size:9px;color:rgba(255,255,255,.45)">
+     Receipt Pro V2
+    </div>
+   </section>
+   <section class="auth-panel">
+    <div class="auth-card">
+     <h2>
+      مرحبًا بك
+     </h2>
+     <p id="authSubtitle">
+      سجّل الدخول للوصول إلى لوحة التحكم.
+     </p>
+     <div class="auth-tabs">
+      <button class="auth-tab active" data-mode="login">
+       تسجيل الدخول
+      </button>
+      <button class="auth-tab" data-mode="register">
+       إنشاء حساب
+      </button>
+     </div>
+     <form id="authForm">
+      <div class="field register-only hidden">
+       <label>
+        الاسم
+       </label>
+       <input id="name" placeholder="مثال: نواف"/>
+      </div>
+      <div class="field">
+       <label>
+        اسم المستخدم
+       </label>
+       <input autocomplete="username" id="username" placeholder="اكتب اسم المستخدم" required=""/>
+      </div>
+      <div class="field">
+       <label>
+        كلمة المرور
+       </label>
+       <div class="password-wrap">
+        <input autocomplete="current-password" id="password" placeholder="••••••••" required="" type="password"/>
+        <button class="password-toggle" id="passToggle" type="button">
+         <i class="fa-regular fa-eye">
+         </i>
+        </button>
+       </div>
+      </div>
+      <button class="btn btn-primary" id="submitBtn">
+       دخول
+      </button>
+     </form>
+     <div class="auth-note">
+      يتم حفظ البيانات محليًا على هذا الجهاز في النسخة الحالية.
+     </div>
+    </div>
+   </section>
+  </div>
+  <script src="../js/core/storage.js">
+  </script>
+  <script src="../js/pages/login.js">
+  </script>
+ </body>
+</html>
